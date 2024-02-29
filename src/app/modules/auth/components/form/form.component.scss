@@ -1,0 +1,13 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.8rem;
+  border-radius: .86rem;
+  background-color: rgb(0 8 255 / 28%);
+}
+.button-submit{
+  width: 100%;
+  font-size: .86rem;
+}

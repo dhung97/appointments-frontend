@@ -1,0 +1,64 @@
+.calendarContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2{
+    font-size: .86rem;
+    margin-top: 1.6rem;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 1.8rem;
+}
+
+.calendar{
+  width: 80%;
+}
+
+.card-time{
+  width: 80%;
+  background-color: rgb(0 8 255 / 28%);
+
+  mat-card-title{
+    font-size: .86rem;
+  }
+
+  mat-card-content{
+    display: flex;
+  }
+}
+
+.reserve-button{
+  width: 80%;
+  font-size: .86rem;
+  margin: 1.6rem 0rem;
+}
+
+@media screen and (min-width: 540px){
+  .calendarContainer{
+    h2{
+      font-size: 1.18rem;
+    }
+  }
+
+  .calendar{
+    width: 16rem;
+  }
+
+  .card-time{
+    width: 15rem;
+    height: 18rem;
+  }
+
+  .reserve-button{
+    width: 16rem;
+  }
+}

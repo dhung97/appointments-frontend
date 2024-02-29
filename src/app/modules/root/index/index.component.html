@@ -1,0 +1,33 @@
+<section class="calendarContainer">
+  <h2>Seleccione la fecha donde desea reservar la cita</h2>
+
+  <div class="content">
+    <div class="calendar">
+      <app-calendar (dateSelected)="dateSelected($event)"></app-calendar>
+    </div>
+
+    <mat-card class="card-time">
+      <mat-card-title>
+        <div>
+          Seleccione un horario
+        </div>
+        <div>
+          <mat-slide-toggle (change)="selectTime($event)">{{currentTime}}</mat-slide-toggle>
+        </div>
+      </mat-card-title>
+      <mat-card-content>
+        <div class="chipsContainer">
+          <mat-chip-listbox aria-label="Available hours">
+            @for (hour of hours; track $index) {
+            @if(!hoursAvailables.includes(hour)){
+              <mat-chip-option (click)="selectHour(hour)">{{hour}}</mat-chip-option>
+            }
+            }
+          </mat-chip-listbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="checkAvailability()" class="reserve-button">RESERVAR</button>
+</section>

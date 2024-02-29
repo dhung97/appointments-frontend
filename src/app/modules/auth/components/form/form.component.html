@@ -1,0 +1,46 @@
+<form action="" [formGroup]="authForm" (ngSubmit)="onSubmit(authForm)" class="form">
+  @if (adminMode) {
+  <mat-form-field appearance="fill">
+    <mat-label>Usuario</mat-label>
+    <input matInput type="text" formControlName="username">
+    @if (!authForm.get('username')?.valid) {
+      <mat-error>{{handleErrorOf('username')}}</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Contraseña</mat-label>
+    <input matInput type="password" formControlName="password">
+    @if (!authForm.get('password')?.valid) {
+      <mat-error>{{handleErrorOf('password')}}</mat-error>
+    }
+  </mat-form-field>
+  }
+
+  @if (!adminMode) {
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput type="text" formControlName="firstname">
+    @if (!authForm.get('firstname')?.valid) {
+      <mat-error>{{handleErrorOf('firstname')}}</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input matInput type="text" formControlName="lastname">
+    @if (!authForm.get('lastname')?.valid) {
+      <mat-error>{{handleErrorOf('lastname')}}</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Teléfono</mat-label>
+    <input matInput type="tel" formControlName="phone">
+    @if (!authForm.get('phone')?.valid) {
+      <mat-error>{{handleErrorOf('phone')}}</mat-error>
+    }
+  </mat-form-field>
+  }
+  <button mat-raised-button color="primary" [disabled]="!authForm.valid" class="button-submit">INGRESAR</button>
+</form>
